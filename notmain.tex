@@ -1,0 +1,32 @@
+% abc
+% syntax: 
+% \documentclass[class=exam, crop=false]{standalone}
+% \input{../../exmain.tex}
+
+% my custom commands:
+% \setup{First line}{Second line}
+% \newprob{}{}{}
+% \ansdisplay : display ans
+% \dlines{1} : dottedlines and stretch 1
+
+% package commands:
+% \useproblem{label}
+
+\documentclass{exam}
+% \usepackage[subpreambles=true]{standalone}
+\usepackage{graphicx}
+% \graphicspath{{images/}}
+\usepackage{preambles}
+\usepackage{blindtext}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\title{Subfiles package example}
+\author{Overleaf}
+\date{ }
+
+\begin{document}
+
+Hi
+
+\end{document}

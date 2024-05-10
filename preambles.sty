@@ -1,0 +1,173 @@
+% \ProvidesPackage{preambles}
+% \ProvidesPackage{preamblesnotes}
+\usepackage{fontsize}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{xeCJK}
+\setCJKmainfont[AutoFakeBold=true]{TW-Sung}
+% \setCJKmainfont[AutoFakeBold=true]{LiSong Pro}
+\usepackage{tabto}
+\usepackage{parskip}  % No-indent
+\usepackage{enumitem} % change enumerate behaviours
+\usepackage{lipsum} %
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{newclude} %make include only not clearpage
+\usepackage{multicol}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{soul}
+\usepackage{tasks}
+\usepackage{tcolorbox}
+\usepackage[version=4]{mhchem}
+\usepackage{tabularray}
+\usepackage{probsoln}
+\input{../../commonPreambles}
+% \usepackage{minipages}
+
+% \setlength{\tabcolsep}{20pt}
+\renewcommand{\arraystretch}{1.5}
+
+\def\sd {(\arabic*)}
+% \marksnotpoints
+% \marginpointname{ 分\points}
+% \renewcommand{\thequestion}{\Roman{question}}
+\pointsinrightmargin
+\pointpoints{mark}{marks}
+\pointname{ \points}
+
+% \input{flush}
+
+\newcommand{\oneTwo}[5][example]{
+    \begin{#1}
+    \par #2\ \begin{enumerate}[label=\sd ]
+        \item #3
+        \item #4
+        \item #5
+    \end{enumerate}
+
+    \end{#1}
+}
+\newcommand{\shc}[1]{
+    \qty[mode = text]{#1}{J.kg^{-1}.\degreeCelsius^{-1}}
+}
+\newcommand{\hc}[1]{
+    \qty[mode = text]{#1}{J.\degreeCelsius^{-1}}
+}
+\newcommand{\oc}[1]{
+    \qty{#1}{\degreeCelsius}
+}
+
+\newcommand{\dg}[1]{$#1^{\circ}$}
+
+\newcommand{\slh}[1]{\qty{#1}{J.kg^{-1}}}
+
+\newcommand{\vel}[1]{
+    \qty{#1}{m.s^{-1}}
+}
+\newcommand{\kmh}[1]{
+    \qty{#1}{km.h^{-1}}
+}
+\newcommand{\acc}[1]{
+    \qty{#1}{m.s^{-2}}
+}
+% \input{choicecustom.tex}
+
+
+\pagestyle{headandfoot}
+% \runningheadrule
+% \firstpageheader{熱學第二課}{熱和內能}{2024年9月2日}
+% \runningheader{熱學第二課}
+% {熱和內能 Heat and Internal Energy, Page \thepage\ of \numpages}
+% {2024年9月2日}
+% \lhead{\ifcontinuation{Question \ContinuedQuestion\ continues\ldots}{}}
+% \chead{熱和內能 Heat and Internal Energy}
+\rhead{Page \thepage\ of \numpages}
+
+
+% tasks package
+\settasks{label=\Alph*.,item-indent=5.5em, before-skip=1.8em, after-item-skip=.35em,after-skip = 1.2em,label-offset=2.5em}
+\NewTasksEnvironment[item-format={\topalign}, label=\Alph*., before-skip=1.5em]{mcimg}(2)
+\NewTasksEnvironment[label=(\arabic*)]{statements}
+
+
+%  an additional 0.5 inch of blank space inserted between questions
+\renewcommand{\questionshook}{\setlength{\itemsep}{0.2in}}
+
+\NumTabs{5}
+\setlength\linefillheight{.5in}
+\setlength\dottedlinefillheight{.5in}
+
+% \includeonly{mc,lq} % include which file ###################################
+
+\newcommand{\setup}[2]{
+
+    {\LARGE\textbf{#1}}\hfill\makebox[0.25\textwidth]{姓名:\enspace\hrulefill}
+
+    {\noindent\par{\LARGE\textbf{#2}}
+        % \hfill\makebox[0.24\textwidth]{學號:\enspace\hrulefill}
+        \vspace{10mm}}
+}
+
+\newcommand{\newprob}[3]{
+
+    \begin{defproblem}{#1}%
+        #2
+        \begin{onlysolution}%
+            #3
+        \end{onlysolution}%
+    \end{defproblem}
+}
+
+\newcommand{\ansdisplay}{
+    \showanswers\printanswers
+}
+
+
+\newcommand{\dlines}[1]{
+    \ifprintanswers
+
+    \else
+        \fillwithdottedlines{\stretch{#1}}
+    \fi
+}
+
+
+\newcommand{\ddlines}[1]{
+    \ifprintanswers
+
+    \else
+        \fillwithdottedlines{#1in}
+    \fi
+}
+
+\newcommand{\mcq}[1]{
+    \filbreak\question
+    \useproblem{#1}
+}
+
+\newcommand{\topalign}[1]{
+    \adjustbox{valign=t}{
+        #1
+    }}
+\newcommand{\topalignc}[1]{
+    \adjustbox{valign=t, center}{
+        #1
+    }}
+
+\newcommand{\zh}[1]{\hfill （#1 marks）}
+\newcommand{\zzh}[1]{\hfill (#1 分)}
+
+\renewcommand{\thesubsubpart}{\arabic{question}}
+\renewcommand{\subpartlabel}{(\thesubpart)}
+\renewcommand{\subsubpartlabel}{(\thesubsubpart)}
+
+\newcommand{\ans}[1]{\ifprintanswers
+        \textbf{Ans:} {\color{red}#1}
+    \fi}
+\newenvironment{ansblock}{\ifprintanswers
+        }{\fi}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\graphicspath{{../../assets}}
