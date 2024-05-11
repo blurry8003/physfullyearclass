@@ -23,6 +23,9 @@
 \usepackage{tabularray}
 \usepackage{probsoln}
 \usepackage{blindtext}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{cellspace}
 \input{../../commonPreambles}
 
 % \setlength{\tabcolsep}{20pt}
@@ -134,6 +137,10 @@
     \useproblem{#1}
 }
 
+\newcommand{\mcqtwo}{
+    \filbreak\question
+}
+
 \newcommand{\topalign}[1]{
     \adjustbox{valign=t}{
         #1
@@ -158,4 +165,27 @@
 
 \renewcommand{\labelenumi}{(\alph{enumi})}
 \renewcommand{\labelenumii}{(\roman{enumii})}
+
+
+
 \graphicspath{{../../assets}}
+
+
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% modify enumerate for MS 
+% \renewcommand{\labelenumi}{(\alph{enumi})}
+% \renewcommand{\labelenumii}{(\roman{enumii})}
+% \setlength{\labelwidth}{2em}
+\newlist{msenum}{enumerate}{2}
+\setlist[msenum, 1]
+{label=(\alph{msenumi})
+    % leftmargin=\parindent,
+    % rightmargin=10pt
+}
+\setlist[msenum, 2]
+{label=(\roman{msenumii}), %1.1, 1.2, 1.3...
+    leftmargin=12pt,
+    % rightmargin=15pt
+}

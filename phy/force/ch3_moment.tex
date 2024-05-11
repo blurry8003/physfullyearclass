@@ -3,17 +3,37 @@
 \input{../../exmain.tex}
 % \usepackage[subpreambles=true]{standalone}
 
-\loadallproblems{ch3_moment_prob.tex}
+\loadallproblems[lq]{ch3_moment_lq.tex}
+\loadallproblems[mc]{ch3_moment_mc.tex}
 
 \begin{document}
 \setup{力矩}{}
+\setlength{\tabcolsep}{10pt}
 
+% \begin{questions}
+%     \ansdisplay
+%     \foreachproblem[lq]{
+%         \question [\thisproblemlabel]\thisproblem \clearpage
+%     }
+%     \foreachproblem[mc]{
+%         \question [\thisproblemlabel]\thisproblem
+%     }
+% \end{questions}
+\section{長題目}
 \begin{questions}
-    \foreachproblem{
-        \question [\thisproblemlabel]\thisproblem
+    % \ansdisplay
+    \foreachproblem[lq]{
+        \question \thisproblem \clearpage
     }
 \end{questions}
 
+\section{多項選擇題}
+\begin{questions}
+    % \ansdisplay
+    \foreachproblem[mc]{
+        \filbreak\question\thisproblem
+    }
+\end{questions}
 % \begin{questions}
 % \ansdisplay
 % \question
