@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{rules}{12}{0}{1}
+\beamer@sectionintoc {2}{examples}{20}{0}{2}
+\beamer@sectionintoc {3}{凸透鏡/凹透鏡的成像Image formed by convex/concave lens}{26}{0}{3}

@@ -1,0 +1,116 @@
+% \NeedsTeXFormat{LaTeX2e}
+% \ProvidesPackage{preamblesnotes}[2014/08/21 Example package]
+% \usecolortheme{whale}
+\usetheme{Boadilla}
+\usecolortheme{seahorse}
+\usefonttheme{serif}
+% \usetheme{Singapore}
+\usepackage{lipsum}
+\usepackage{fancybox}
+% \usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont[AutoFakeBold=7]{TW-Sung}
+% \setCJKmainfont[AutoFakeBold=true]{LiSong Pro}
+% \setCJKsansfont{Kurier}
+\usepackage{circuitikz}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tabto}
+\usepackage{parskip}  % No-indent
+% \usepackage{enumitem} % change enumerate behaviours
+\usepackage{lipsum} %
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{newclude} %make include only not clearpage
+\usepackage{adjustbox}
+\usepackage{multicol}
+\setlength{\fboxsep}{0.6em}
+\usepackage{graphics}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{tabularray}
+\usepackage[version=4]{mhchem}
+\usepackage{array}
+\usepackage[longtable]{multirow}
+\usepackage{longtable}
+
+\usetikzlibrary{positioning}
+\usepackage{tasks}
+\input{../../commonPreambles}
+
+\newcommand{\zerodisplayskips}{%
+    \setlength{\abovedisplayskip}{0pt}%
+    \setlength{\belowdisplayskip}{0pt}%
+    \setlength{\abovedisplayshortskip}{0pt}%
+    \setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+% \setbeamerfont{normal text}{size=\HUGE}
+% \setbeamerfont{block title}{size=\HUGE}
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+
+\newcommand{\shc}[1]{
+    \qty[mode = text]{#1}{J.kg^{-1}.\degreeCelsius^{-1}}
+}
+\newcommand{\hc}[1]{
+    \qty[mode = text]{#1}{J.\degreeCelsius^{-1}}
+}
+\newcommand{\oc}[1]{
+    \qty{#1}{\degreeCelsius}
+}
+\newcommand{\slh}[1]{\qty{#1}{J.kg^{-1}}}
+
+\newcommand{\dg}[1]{ \qty{#1}{^{\circ}} }
+
+\newcommand{\vel}[1]{
+    \qty{#1}{m.s^{-1}}
+}
+\newcommand{\kmh}[1]{
+    \qty{#1}{km.h^{-1}}
+}
+\newcommand{\acc}[1]{
+    \qty{#1}{m.s^{-2}}
+}
+\newcommand{\p}[1]{\qty{#1}{kg.m.s^{-1}}}
+
+% tasks package
+\settasks{label=\Alph*.,item-indent=5.5em, before-skip=1.8em, after-item-skip=.35em,after-skip = 1.2em,label-offset=2.5em}
+\settasks{label=\Alph*.,item-indent=5.5em, before-skip=1.8em, after-item-skip=.35em,after-skip = 1.2em,label-offset=2.5em}
+\NewTasksEnvironment[item-format={\topalign}, label=\Alph*., before-skip=1.5em]{mcimg}(2)
+\NewTasksEnvironment[label=(\arabic*)]{statements}
+
+
+\newenvironment{eg}{%
+    \begin{frame}[t]{例題Example}%
+        }{%
+    \end{frame}%
+}
+
+\sisetup{input-digits = 0123456789\pi}
+
+\newcommand{\settitle}[3]{
+    \title{#1}
+    \author{#2}
+    \institute{#3}
+    \date{}
+    \frame{\titlepage}
+}
+
+\newcommand{\topalign}[1]{
+    \adjustbox{valign=t}{
+        #1
+    }
+}
+\newcommand{\topalignc}[1]{
+    \adjustbox{valign=t, center}{
+        #1
+    }
+}

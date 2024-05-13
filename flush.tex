@@ -1,0 +1,48 @@
+\setcounter{totalnumber}{30}% lots of here floats
+
+\def\a{One two \stepcounter{enumi}\roman{enumi} three four five six. }
+\def\b{\a\a  red \stepcounter{enumi}\roman{enumi} red green yellow 
+random longer typesetting expressions that might invoke hyphenation. }
+\def\c{\a\b\a\a\b\b\a}
+
+\def\f#1{\begin{figure}[hp]\centering\rule{2cm}{1cm}\par\caption{ff: #1}\end{figure}}
+\def\t#1{\begin{table}[hp]\centering\caption{tt: #1}\par\bigskip\begin{tabular}{cc}1&2\\33&44\\555&666\end{tabular}\end{table}}
+
+\makeatletter
+\def\flushhere{\par{%
+ \let\s@deferlist\@deferlist
+ \let\@currbox\relax
+\@next\@currbox\@deferlist{%
+  \ifodd\count\@currbox
+\typeout{Trying \meaning\@currbox (\number\@currbox/\the\count\@currbox),
+        adding to \meaning\@currlist}%
+    \@cons\@currlist\@currbox
+\typeout{added: to \meaning\@currlist}%
+\typeout{deferlist was \s@deferlist, now \@deferlist}%
+\let\s@@deferlist\@deferlist\@empty
+\global\let\@deferlist\@empty
+    \@floatpenalty -\@Miii
+      \penalty -\@Miv
+      \@tempdima\prevdepth
+      \vbox{}%
+      \prevdepth\@tempdima
+      \penalty\@floatpenalty
+       \@@par
+   \ifx\@deferlist\@empty
+\typeout{float placed here}%
+\global\let\@deferlist\s@@deferlist
+   \flushhere
+\else
+\typeout{float not placed here}%
+\global\let\@deferlist\s@deferlist
+\fi
+    \else
+\typeout{not h}%
+    \global\let\@deferlist\s@deferlist
+    \fi
+   }%
+  {%
+\typeout{no pending float}%
+}\par}}
+
+\makeatother

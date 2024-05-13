@@ -1,0 +1,46 @@
+\documentclass[borders=2pt,crop=false]{standalone}
+% Drawing
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{preamblestikz}
+% Define Color
+\definecolor{g1}{rgb}{0.0, 1.0, 0.0}
+
+% Tikz Library
+\usetikzlibrary{angles, quotes, calc, decorations.markings, decorations.pathmorphing, intersections}
+
+% Styles
+\tikzset{every node/.style={align=center}}
+\tikzset{arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .52 with \arrow{Classical TikZ Rightarrow[length=5pt]}}}}
+\tikzset{ray/.style={very thick, red}}
+\tikzset{blackray/.style={very thick}}
+\tikzset{line/.style={thick, black}}
+\tikzset{lined/.style={thick, black, dashed}}
+
+\begin{document}
+
+
+
+\resizebox{1\textwidth}{!}{%
+
+    \begin{circuitikz}
+        \tikzstyle{every node}=[font=\LARGE]
+        \draw [, line width=1.25pt ] (3.5,9.5) rectangle (8,6.5);
+        \draw [line width=0.9pt, arrow inside] (-2,8) -- (3.5,8);
+        \draw [line width=0.9pt, arrow inside] (3.5,8) -- (8,8);
+        \draw [line width=0.9pt, arrow inside] (8,8) -- (13,8);
+        \node [font=\LARGE] at (6,7) {玻璃 glass};
+        \node [font=\LARGE] at (10.25,7) {空氣 air};
+        \node [font=\LARGE] at (1,7) {空氣 air};
+        \node [font=\LARGE] at (0.75,8.75) {$c=\qty{3e8}{m.s^{-1}}$};
+        \node [font=\LARGE] at (10.75,8.75) {$v=c$};
+        \node [font=\LARGE] at (5.75,8.75) {$v<c$};
+    \end{circuitikz}
+
+
+
+
+}%
+
+
+\end{document}

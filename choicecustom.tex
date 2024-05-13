@@ -1,0 +1,38 @@
+\newcounter{mchoice}
+\renewcommand{\themchoice}{\Alph{mchoice}}
+\newcommand\mchoicelabel{\themchoice.}
+\newcounter{schoice}
+\newcommand\schoicelabel{(\theschoice)}
+
+\newenvironment{mchoices}%
+  {\list{\mchoicelabel}%
+     {\usecounter{mchoice}
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=15pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+\newenvironment{schoices}
+{\list{\schoicelabel}%
+     {\usecounter{schoice}
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 1.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=15pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+  \newcommand{\topalign}[1]{
+  \adjustbox{valign=t}{
+    #1
+}
+  }
