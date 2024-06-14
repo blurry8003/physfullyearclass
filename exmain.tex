@@ -12,7 +12,7 @@
 \usepackage{lipsum} %
 \usepackage{color}
 \usepackage{siunitx}
-\usepackage{newclude} %make include only not clearpage
+\usepackage{newclude} % make include only not clearpage
 \usepackage{multicol}
 \usepackage{adjustbox}
 \usepackage{multirow}
@@ -26,7 +26,13 @@
 \usepackage{tabularx}
 \usepackage{makecell}
 \usepackage{cellspace}
+\usepackage{etoolbox}
 \input{../../commonPreambles}
+
+\newtoggle{isitlq}
+\toggletrue{isitlq}
+\newtoggle{usenewuseproblem}
+\togglefalse{usenewuseproblem}
 
 % \setlength{\tabcolsep}{20pt}
 \renewcommand{\arraystretch}{1.5}
@@ -108,15 +114,7 @@
 
 
 
-\newcommand{\newprob}[3]{
 
-    \begin{defproblem}{#1}%
-        #2
-        \begin{onlysolution}%
-            #3
-        \end{onlysolution}%
-    \end{defproblem}
-}
 
 \newcommand{\ansdisplay}{
     \showanswers\printanswers
@@ -207,4 +205,21 @@
 
 \newcommand{\giveM}{{\hfill\color{red}(1M)}}
 \newcommand{\giveA}{{\hfill\color{red}(1A)}}
+\newcommand{\giveScore}[1]{{\hfill\color{red}(#1A)}}
 \newcommand{\giveMA}{{\hfill\color{red}(1M+1A)}}
+
+
+
+\newcommand{\newprob}[3]{
+
+    \begin{defproblem}{#1}%
+        #2
+        \begin{onlysolution}%
+            % #3
+            \iftoggle{usenewuseproblem}{
+                \iftoggle{isitlq}{\sol #3}{\mckey #3}
+            }{#3}
+
+        \end{onlysolution}%
+    \end{defproblem}
+}

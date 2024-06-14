@@ -19,15 +19,16 @@
 %         \question [\thisproblemlabel]\thisproblem
 %     }
 % \end{questions}
-\section{長題目}
+\section*{結構題}
 \begin{questions}
     % \ansdisplay
     \foreachproblem[lq]{
-        \question \thisproblem \clearpage
+        \question \thisproblem
+        \dlines{1}\clearpage\dlines{1}\clearpage
     }
 \end{questions}
-
-\section{多項選擇題}
+\section*{多項選擇題}
+% 以下所有題目取$g=$ \acc{9.81}。
 \begin{questions}
     % \ansdisplay
     \foreachproblem[mc]{

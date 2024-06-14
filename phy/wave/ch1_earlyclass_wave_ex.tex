@@ -3,29 +3,48 @@
 \input{../../exmain.tex}
 % \usepackage[subpreambles=true]{standalone}
 
-\loadallproblems[lq]{ch1_earlyclass_wave_lq.tex}
-\loadallproblems[mc]{ch1_earlyclass_wave_mc.tex}
+% \loadallproblems[lq]{ch1_earlyclass_wave_lq.tex}
+\loadselectedproblems[lq]{1715577772,1715601249,715588844,1715588669,1715577939}{ch1_earlyclass_wave_lq.tex}
+% \loadallproblems[mc]{ch1_earlyclass_wave_mc.tex}
+\loadexceptproblems[mc]{1715575628,1715587302}{ch1_earlyclass_wave_mc.tex}
 
 \begin{document}
 \setup{波的本質}{}
 \setlength{\tabcolsep}{10pt}
 
-\section{長題目}
-\begin{questions}
-    \ansdisplay
-    \foreachproblem[lq]{
-        \question \thisproblem
-        \dlines{1}\clearpage\dlines{1}\clearpage
-    }
-\end{questions}
+\section{結構題}
+% \begin{questions}
+%     % \ansdisplay
+%     \foreachproblem[lq]{
+%         % \question \thisproblem
+%         \question [\thisproblemlabel]\thisproblem
+%         \dlines{1}\clearpage\dlines{1}\clearpage
+%     }
+% \end{questions}
+% 1715601249 1715588844 1715588669 1715577939 1715577772
 
-\section{多項選擇題}
-% 以下所有題目取$g=$ \acc{9.81}。
+\begin{questions}
+    % \ansdisplay
+    \question\useproblem[lq]{1715577772}
+    \dlines{1}\clearpage\dlines{1}\clearpage
+    \question
+    \useproblem[lq]{1715601249}\clearpage
+    % \dlines{1}\clearpage\dlines{1}\clearpage
+    % \question
+    % \useproblem[lq]{1715935644}
+    % \dlines{1}\clearpage\dlines{1}\clearpage
+    \question\useproblem[lq]{1715588669}
+    \dlines{1}\clearpage\dlines{1}\clearpage
+    \question\useproblem[lq]{1715577939}
+    \dlines{1}\clearpage\dlines{1}\clearpage
+\end{questions}
+\section*{多項選擇題}
 \begin{questions}
     % \ansdisplay
     \foreachproblem[mc]{
         \filbreak\question\thisproblem
+        % \question [\thisproblemlabel]\thisproblem
     }
 \end{questions}
-
+% exclude 1715575628 1715587302
 \end{document}

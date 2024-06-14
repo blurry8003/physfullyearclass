@@ -3,29 +3,40 @@
 \input{../../exmain.tex}
 % \usepackage[subpreambles=true]{standalone}
 
-\loadallproblems[lq]{ch3_earlyclass_wave_lq.tex}
-\loadallproblems[mc]{ch3_earlyclass_wave_mc.tex}
-
+% \loadallproblems[lq]{ch3_earlyclass_wave_lq.tex}
+% \loadallproblems[mc]{ch3_earlyclass_wave_mc.tex}
+\loadselectedproblems[lq]{1715607601,1715653033,1715653284,1715658440}{ch3_earlyclass_wave_lq.tex}
+\loadselectedproblems[mc]{1715607598,1715652445,1715652605,1715659733,1715660522,1715660648,1715660647,1715660649}{ch3_earlyclass_wave_mc.tex}
 \begin{document}
 \setup{干涉與駐波}{}
 \setlength{\tabcolsep}{10pt}
 
 \section{長題目}
+% \begin{questions}
+%     % \ansdisplay
+%     \foreachproblem[lq]{
+%         \question \thisproblem
+%         \dlines{1}\clearpage\dlines{1}\clearpage
+%     }
+% \end{questions}
 \begin{questions}
-    \ansdisplay
-    \foreachproblem[lq]{
-        \question \thisproblem
-        \dlines{1}\clearpage\dlines{1}\clearpage
-    }
+    \question \useproblem[lq]{1715607601}
+    % \dlines{1}\clearpage\dlines{1}\clearpage
+    \question \useproblem[lq]{1715653033}
+    \dlines{1}\clearpage\dlines{1}\clearpage
+    \question \useproblem[lq]{1715653284}
+    \dlines{1}\clearpage\dlines{1}\clearpage
+    \question \useproblem[lq]{1715658440}
+    \dlines{1}\clearpage\dlines{1}\clearpage
 \end{questions}
-
+% 1715607601 1715653033 1715653284 1715658440
 \section{多項選擇題}
 % 以下所有題目取$g=$ \acc{9.81}。
 \begin{questions}
-    \ansdisplay
+    % \ansdisplay
     \foreachproblem[mc]{
         \filbreak\question\thisproblem
     }
 \end{questions}
-
+% 1715607598  1715652445  1715652605   1715659733 1715660522 1715660648 1715660647
 \end{document}
