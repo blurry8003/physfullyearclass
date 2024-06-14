@@ -1,0 +1,73 @@
+\newprob{1715830309}
+{
+    一個 \qty{500}{W}的加熱器正在加熱一塊 \qty{0.25}{kg}，\oc{0}的冰。假設沒有能量損失在周圍環境。（冰的比熱容量＝\shc{2100}，水的比熱容量＝\shc{4200}，蒸汽的比熱容量＝\shc{2000}，冰的熔解比潛熱＝\slh{3.34e5}，水的汽化比潛熱＝\slh{2.26e6}）
+    % \par A heater of power \qty{500}{W} supplies heat to a cube of ice at \oc{0} with mass \qty{0.25}{kg}. Assume no heat loss to surroundings.
+    % (specific heat capacity of ice $=$\shc{2100}, specific heat capacity of water $=$\shc{4200}, specific heat capacity of steam $=$\shc{2000}, specific latent heat of fusion of ice $=$ \slh{3.34e5}, specific latent heat of vaporization of water $=$ \slh{2.26e6})
+
+    \begin{parts}
+        \part[2] 加熱器最少需要多少時間能完全熔化這塊冰？
+        % \par What is the minimum time it takes to melt the ice completely?
+        % \fillwithdottedlines{\stretch{2}}
+        % \begin{solutionordottedlines}[\stretch{2}]
+
+        % \end{solutionordottedlines}
+        \part[3] 加熱器最少需要多少時間能把這塊冰變成\oc{60}的水？
+        % \par What is the minimum time it takes to turn this ice into \oc{60} water?
+        % \fillwithdottedlines{\stretch{3}}
+        % \begin{solutionordottedlines}[\stretch{3}]
+
+        % \end{solutionordottedlines}
+        \part[3] 加熱器最少需要多少時間能把這塊冰變成蒸氣？
+        % \par What is the minimum time it takes to turn this ice into steam?
+        % \fillwithdottedlines{\stretch{3}}
+        % \begin{solutionordottedlines}[\stretch{3}]
+
+
+
+        % \end{solutionordottedlines}
+    \end{parts}
+}{
+    \sol
+    \begin{enumerate}[label=(\alph*)]
+        \item 需要能量Energy required$=m\ell=0.25\times \num{3.34e5}=83500\unit{J}$\par
+              需要時間Time required $t=E/P=83500/500=\qty{167}{s}$
+        \item 需要能量Energy required$=m\ell+mc\Delta T=83500+0.25\times 4200\times 60=146500\unit{J}$\par
+              需要時間Time required $t=E/P=146500/500=\qty{293}{s}$
+        \item 需要能量Energy required$=m\ell_f+mc\Delta T+m\ell_v=83500+0.25\times 4200\times 100+0.25\times\qty{2.36e6}{}=753500\unit{J}$\par
+              需要時間Time required $t=E/P=753500/500=\qty{1507}{s}$
+    \end{enumerate}
+
+}
+
+\newprob{1715831262}
+{
+    一個熱容量為 \hc{660} 的電水壼盛載着\oc{15}，2.7 kg的水。電水壼提供的功率是2500 W，假設沒有能量損失於周圍環境，計算出30分鐘之後壼內水的質量。\zzh{2}
+    % \par A kettle of heat capacity \hc{660}contains 2.7kg of water at \oc{15}. If the power supplied to the kettle is 2500W, and assume no heat loss to surroundings, calculate the mass of water left in the kettle after 30 minutes.
+}{
+    \sol
+    水壼吸收的能量Energy absorbed by the kettle = $C\Delta T=660\times (100-15)=56100\unit{J}$.\par
+    水壼提供的能量Total energy supplied = $2500\times 30\times 60=4500000$ J\par
+    設水壼中剩下的水的質量為$m_w$。Let $m_w$ be mass of water left in the kettle.
+    \begin{align*}
+        4500000 & =(2.7-m)\times \num{2.26e6}+2.7\times 4200\times (100-15)+56100 \\
+        m       & =1.16\unit{kg}
+    \end{align*}
+    水壼中剩下1.16 kg的水。\par
+    1.16 kg of water left in the kettle。
+}
+
+\newprob{1715831461}
+{
+    湯姆將0.35 kg，\oc{25}的橙汁倒入杯子中。他準備了一些相同的冰塊，每個冰塊質量為15 g。他最少要加多少冰塊才能製作出溫度不超過 \oc{5}的冷飲？忽略杯子的熱容量和杯子和周圍環境之間的熱交換。(橙汁的比熱容量= \shc{5000}；水的比熱容量= \shc{4200}；冰的比熱容量= \shc{2260}；冰的融解比潛熱= \slh{3.34e5})
+    % \par Tommy pours 0.35kg of orange juice at room temperature of \oc{25}into a glass. Some identical ice cubes each of mass 15g are availabe. At least how many ice cubes should he add to the juice in order to produce a cold drink with temperature not higher than \oc{5}? Neglect the heat capacity of the glass and heat exchange between the glass and surroundings. (specific heat capacity of orange = \shc{5000}; specific heat capacity of water = \shc{4200}; specific latent heat of fusion of ice = \slh{3.34e5})
+}{
+    \sol
+    設n為冰塊數目。 Let n be the number of ice cubes used.
+    \par 橙汁提供的熱＝冰熔化時吸收的熱＋熔解後水吸收的熱
+    \par Heat given out by juice = heat absorbed by ice in melting + heat absorbed by water from melted ice.
+
+    \[mc\Delta T=m_o\ell_f+m_oc_w\Delta T\]
+    \[0.35\times 5000\times (25-5)=(n\times 0.015)\times \num{3.34e5}+(n\times 0.014)\times 4200 \times (5-0)\]
+    \[\Rightarrow 35000=5325n\Rightarrow n=6.6\]
+    所以他需要加7塊冰。 He should add 7 ice cubes.
+}

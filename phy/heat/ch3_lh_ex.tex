@@ -1,0 +1,31 @@
+\documentclass[class=exam, crop=false]{standalone}
+% \documentclass[class=exam,crop=false]{standalone}
+\input{../../exmain.tex}
+% \usepackage[subpreambles=true]{standalone}
+
+\loadallproblems[lq]{ch3_lh_lq.tex}
+\loadallproblems[mc]{ch3_lh_mc.tex}
+
+\begin{document}
+\setup{潛熱}{}
+\setlength{\tabcolsep}{10pt}
+
+\section*{結構題}
+\begin{questions}
+    \ansdisplay
+    \foreachproblem[lq]{
+        \question \thisproblem
+        \dlines{1}\clearpage
+    }
+\end{questions}
+
+\section*{多項選擇題}
+% 以下所有題目取$g=$ \acc{9.81}。
+\begin{questions}
+    \ansdisplay
+    \foreachproblem[mc]{
+        \filbreak\question\thisproblem
+    }
+\end{questions}
+
+\end{document}

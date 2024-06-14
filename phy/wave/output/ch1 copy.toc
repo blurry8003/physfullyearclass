@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{oscillation}{2}{0}{1}
+\beamer@sectionintoc {2}{waves}{6}{0}{2}
+\beamer@sectionintoc {3}{discribing wave}{13}{0}{3}

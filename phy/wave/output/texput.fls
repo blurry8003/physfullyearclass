@@ -1,0 +1,5 @@
+PWD /Users/cheungchaklun/Library/CloudStorage/Dropbox/應用程式/github/physclass/phy/wave
+INPUT /usr/local/texlive/2023/texmf.cnf
+INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt
+OUTPUT output/texput.log

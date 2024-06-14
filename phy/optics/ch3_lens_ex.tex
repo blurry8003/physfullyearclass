@@ -1,0 +1,42 @@
+\documentclass[class=exam, crop=false]{standalone}
+\newif\ifitsquestion
+\itsquestiontrue
+% \documentclass[class=exam,crop=false]{standalone}
+\input{../../exmain.tex}
+% \usepackage[subpreambles=true]{standalone}
+
+\loadallproblems[lq]{ch3_lens_lq.tex}
+\loadallproblems[mc]{ch3_lens_mc.tex}
+
+\begin{document}
+\setup{透鏡}{}
+\setlength{\tabcolsep}{10pt}
+
+\section*{結構題}
+\begin{questions}
+    % \ansdisplay
+    \foreachproblem[lq]{
+        \question \thisproblem
+        \dlines{1}\clearpage
+    }
+\end{questions}
+% extra
+\dlines{1}\clearpage
+\section*{多項選擇題}
+\begin{questions}
+    % \ansdisplay
+    \foreachproblem[mc]{
+        % \itsquestionfalse has to put to the previous before.
+        \def\printitsquestion{
+            \ifitsquestion
+                \filbreak\question\thisproblem
+            \else
+                \clearpage\useproblem[mc]{\thisproblemlabel}
+                \itsquestiontrue
+            \fi
+        }
+        \printitsquestion
+    }
+\end{questions}
+
+\end{document}
