@@ -7,11 +7,11 @@
 \toggletrue{usenewuseproblem}
 % \usepackage[subpreambles=true]{standalone}
 
-\loadallproblems[lq]{ch2_weekend_lq.tex}
-\loadallproblems[mc]{ch2_weekend_mc.tex}
+\loadallproblems[lq]{tutch2_circuit_lq.tex}
+\loadallproblems[mc]{tutch2_circuit_mc.tex}
 
 \begin{document}
-\setup{波的反射、折射和衍射 Reflection, refraction and diffraction of wave}{}
+\setup{電路}{}
 \setlength{\tabcolsep}{10pt}
 
 \section*{結構題Structured Questions}
