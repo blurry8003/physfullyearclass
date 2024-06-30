@@ -1,0 +1,6 @@
+# Fdb version 4
+["xdvipdfmx"] 0 "output/ch3.xdv" "output/ch3.pdf" "output/ch3" 0 -1
+  "output/ch3.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "output/ch3.pdf"
+  (rewritten before read)
